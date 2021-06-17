@@ -1,0 +1,10 @@
+{
+  "name": "@livelink/fitster",
+  "version": "0.9.0",
+  "description": "Fits text proportionally to an element with intelligent text wrapping.",
+  "main": "index.js",
+  "repository": "https://github.com/livelink/fitster",
+  "author": "Jamie Hill <jamie@thelucid.com>",
+  "license": "MIT",
+  "private": false
+}
