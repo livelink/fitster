@@ -160,7 +160,7 @@ export class FitToScaler {
   }
 }
 
-export default class FitText {
+export default class Fitster {
   constructor(
     element,
     {
