@@ -1,6 +1,6 @@
 {
   "name": "@livelink/fitster",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Fits text proportionally to an element with intelligent text wrapping.",
   "main": "index.js",
   "repository": "https://github.com/livelink/fitster",
