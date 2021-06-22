@@ -147,7 +147,10 @@ describe('Box', () => {
 
       box.wrap = true;
 
-      expect(element.style).toEqual({ whiteSpace: 'break-spaces' });
+      expect(element.style).toEqual({
+        position: null,
+        whiteSpace: 'break-spaces'
+      });
     });
 
     test('can disable wrapping', () => {
@@ -157,6 +160,7 @@ describe('Box', () => {
       box.wrap = false;
 
       expect(element.style).toEqual({
+        position: 'fixed',
         transform: 'none',
         whiteSpace: 'nowrap',
         width: 'auto',
@@ -198,8 +202,6 @@ describe('Box', () => {
   });
 
   describe('dimensions', () => {
-    
-
     test('can set width', () => {
       const element = { style: {} };
       const box = new Box(element);
@@ -207,6 +209,15 @@ describe('Box', () => {
       box.width = 100;
 
       expect(element.style).toEqual({ width: '100px' });
+    });
+    
+    test('can set height', () => {
+      const element = { style: {} };
+      const box = new Box(element);
+
+      box.height = 100;
+
+      expect(element.style).toEqual({ height: '100px' });
     });
 
     describe('frame', () => {
@@ -357,6 +368,7 @@ describe('AspectMatchingWrapper', () => {
     new AspectMatchingWrapper(new Box(element)).wrap(300, 900);
 
     expect(element.style.width).toEqual('327px');
+    expect(element.style.height).toEqual('981px');
   });
 
   test('can scale down until text starts to overflow', () => {
@@ -365,6 +377,16 @@ describe('AspectMatchingWrapper', () => {
     new AspectMatchingWrapper(new Box(element)).wrap(300, 900);
 
     expect(element.style.width).toEqual('599px');
+    expect(element.style.height).toEqual('1797px');
+  });
+  
+  test('can leave it alone if already fits without wrapping', () => {
+    const element = textWrapElement(800, 400, { overflowWidth: 300 });
+
+    new AspectMatchingWrapper(new Box(element)).wrap(400, 200);
+
+    expect(element.style.width).toEqual('800px');
+    expect(element.style.height).toEqual('400px');
   });
 });
 

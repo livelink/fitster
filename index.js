@@ -64,12 +64,21 @@ export class Box {
     boolean ? this._enableWrapping() : this._disableWrapping();
   }
 
+  get scale() {
+    const match = this._style.transform.match(/scale\((.+)\)/);
+    return match ? match[1] : 1;
+  }
+
   set scale(fraction) {
     this._style.transform = `scale(${fraction})`;
   }
 
   set width(value) {
     this._style.width = `${value}px`;
+  }
+  
+  set height(value) {
+    this._style.height = `${value}px`;
   }
 
   toString() {
@@ -84,14 +93,18 @@ export class Box {
 
   _disableWrapping() {
     Object.assign(this._style, {
+      position: 'fixed',
       transform: 'none',
       whiteSpace: 'nowrap',
-      width: 'auto',
+      width: 'auto'
     });
   }
-
+  
   _enableWrapping() {
-    this._style.whiteSpace = 'break-spaces';
+    Object.assign(this._style, {
+      position: null,
+      whiteSpace: 'break-spaces'
+    });
   }
 }
 
@@ -128,8 +141,11 @@ export class AspectMatchingWrapper {
       condition: () => this._box.outer.aspect < aspect,
       step: this._precision,
     });
+    
+    const frameWidth = this._box.frame.width;
 
-    if (this._box.fits(width, height)) this._box.width = width;
+    this._box.width = frameWidth <= width ? width : frameWidth;
+    this._box.height = frameWidth / aspect;
   }
 
   _adjustWidthWhile({ condition, step = 1 }) {
@@ -156,7 +172,7 @@ export class FitToScaler {
       height / this._box.frame.height
     );
 
-    this._box.scale = parseFloat(min.toFixed(5));
+    this._box.scale = parseFloat(min.toFixed(5));;
   }
 }
 
@@ -171,6 +187,7 @@ export default class Fitster {
   ) {
     const box = new Box(element);
 
+    this._box = box;
     this._grower = new grower(box);
     this._wrapper = new wrapper(box);
     this._scaler = new scaler(box);
@@ -180,5 +197,9 @@ export default class Fitster {
     this._grower.grow(width, height);
     this._wrapper.wrap(width, height);
     this._scaler.scale(width, height);
+  }
+
+  get scale() {
+    return this._box.scale;
   }
 }

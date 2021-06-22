@@ -5,7 +5,7 @@ Fits text proportionally to an element with intelligent text wrapping.
 ## Installation
 
 ```shell
-npm install fitster
+yarn add fitster
 ```
 
 ## Usage
