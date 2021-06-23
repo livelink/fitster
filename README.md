@@ -36,7 +36,7 @@ The test suite will automatically be run by GitHub actions on a push or pull req
 
 ## Releases
 
-Releases are automatically handled by GitHub Actions. Just set the correct semantic version number in `package.json`, create a tag e.g. `v0.9.8`, push the new tag with `git push --tags`, and the rest will happen automatically.
+Releases are automatically handled by GitHub Actions. Just set the correct semantic version number in `package.json`, commit and push changes, create a tag e.g. `v0.9.8`, push the new tag with `git push --tags`, and the rest will happen automatically.
 
 ## Contributing
 
