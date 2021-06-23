@@ -10,6 +10,8 @@ yarn add fitster
 
 ## Usage
 
+Fitster leverages JavaScript's native module system ([known as ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)), so can be used with your favourite front-end build tool.
+
 ```javascript
 import Fitster from '@livelink/fitster';
 
