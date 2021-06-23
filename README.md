@@ -10,7 +10,15 @@ yarn add fitster
 
 ## Usage
 
-Coming soon...
+```javascript
+import Fitster from '@livelink/fitster';
+
+const fitster = new Fitster(document.querySelector('.my-element'));
+
+fitster.fitTo(400, 300);
+
+console.log(fitster.scale);
+```
 
 ## Contributing
 
