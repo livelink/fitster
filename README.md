@@ -2,6 +2,14 @@
 
 Fits rich text proportionally to an element with intelligent text wrapping.
 
+### Before
+
+![Before Fitster](https://github.com/livelink/fitster/blob/main/examples/before.png?raw=true)
+
+### After
+
+![Before Fitster](https://github.com/livelink/fitster/blob/main/examples/after.png?raw=true)
+
 ## Installation
 
 ```shell
