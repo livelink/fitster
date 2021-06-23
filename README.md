@@ -1,6 +1,6 @@
 # Fitster
 
-Fits text proportionally to an element with intelligent text wrapping.
+Fits any amount of rich text proportionally to an element with intelligent text wrapping.
 
 ## Installation
 
@@ -19,6 +19,16 @@ fitster.fitTo(400, 300);
 
 console.log(fitster.scale);
 ```
+
+## Tests
+
+To run the Jest test suite, just run:
+
+```shell
+yarn test
+```
+
+The test suite will automatically be run by GitHub actions on a push or pull request.
 
 ## Contributing
 
