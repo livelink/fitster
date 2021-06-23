@@ -30,6 +30,8 @@ console.log(fitster.scale);
 
 ![Before Fitster](https://github.com/livelink/fitster/blob/main/examples/after.png?raw=true)
 
+See [example on CodePen](https://codepen.io/thelucid/pen/ZEedvMq).
+
 ## Tests
 
 To run the Jest test suite, just run:
