@@ -1,6 +1,6 @@
 # Fitster
 
-Fits any amount of rich text proportionally to an element with intelligent text wrapping.
+Fits rich text proportionally to an element with intelligent text wrapping.
 
 ## Installation
 
