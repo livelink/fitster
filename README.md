@@ -34,6 +34,10 @@ The test suite will automatically be run by GitHub actions on a push or pull req
 
 [![Quality](https://github.com/livelink/fitster/actions/workflows/quality.yml/badge.svg)](https://github.com/livelink/fitster/actions/workflows/quality.yml)
 
+## Releases
+
+Releases are automatically handled by GitHub Actions. Just set the correct semantic version number in `package.json`, create a tag e.g. `v0.9.8`, push the new tag with `git push --tags`, and the rest will happen automatically.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/livelink/fitster. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/livelink/fitster/blob/main/CODE_OF_CONDUCT.md).
