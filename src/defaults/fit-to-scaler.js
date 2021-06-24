@@ -11,6 +11,6 @@ export default class FitToScaler {
       height / this._box.frame.height
     );
 
-    this._box.scale = parseFloat(min.toFixed(5));;
+    this._box.scale = parseFloat(min.toFixed(5));
   }
 }
