@@ -75,7 +75,8 @@ export default class Box {
       position: 'fixed',
       transform: 'none',
       whiteSpace: 'nowrap',
-      width: 'auto'
+      width: 'auto',
+      height: 'auto'
     });
   }
   

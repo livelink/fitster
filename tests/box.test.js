@@ -90,6 +90,7 @@ describe('Box', () => {
         transform: 'none',
         whiteSpace: 'nowrap',
         width: 'auto',
+        height: 'auto'
       });
     });
   });
