@@ -5,7 +5,7 @@ Fits rich text proportionally to an element with intelligent text wrapping.
 ## Installation
 
 ```shell
-yarn add fitster
+yarn add @livelink/fitster
 ```
 
 ## Usage
